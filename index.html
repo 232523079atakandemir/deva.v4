@@ -97,7 +97,8 @@
             background: rgba(40, 40, 40, 0.7); border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--yazi-renk); padding: 10px 20px; border-radius: 25px; 
             font-size: 0.95rem; font-weight: 600; cursor: pointer; white-space: nowrap;
-            transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;
+            transition: all 0.3s ease; 
+            flex-shrink: 0; /* YENİ: Mobilde yazıların sıkışmasını ve daralmasını kesin olarak engeller */
         }
 
         .tab-btn.active {
@@ -119,12 +120,11 @@
             transform: translateY(20px); animation: fadeUp 0.5s forwards; cursor: pointer; 
         }
 
-        /* YENİ: Resim yüklenmediğinde boş durmaması için koyu bir kutu (skeleton) ayarı */
         .item-img {
             width: 75px; height: 75px; object-fit: cover; border-radius: 10px; margin-right: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.4); flex-shrink: 0; 
             border: 1px solid rgba(255, 255, 255, 0.1); background-color: rgba(0,0,0,0.5);
-            color: transparent; /* Alt texti gizler */
+            color: transparent; 
         }
 
         .item-info { flex-grow: 1; padding-right: 10px; }
@@ -192,13 +192,13 @@
         <span class="brand-name">Deva</span>
     </header>
 
-    <!-- KATEGORİ SEKMELERİ -->
+    <!-- KATEGORİ SEKMELERİ (EMOJİLER KALDIRILDI) -->
     <div class="tab-container">
-        <button class="tab-btn active ripple-element" onclick="kategoriAc(event, 'Firin')">🔥 Taş Fırından</button>
-        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Kebap')">🥩 Kebap & Izgaralar</button>
-        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Tavuk')">🍗 Tavuk Çeşitleri</button>
-        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Tatli')">🍰 Tatlılar</button>
-        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Icecek')">🥤 İçecekler</button>
+        <button class="tab-btn active ripple-element" onclick="kategoriAc(event, 'Firin')">Taş Fırından</button>
+        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Kebap')">Kebap & Izgaralar</button>
+        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Tavuk')">Tavuk Çeşitleri</button>
+        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Tatli')">Tatlılar</button>
+        <button class="tab-btn ripple-element" onclick="kategoriAc(event, 'Icecek')">İçecekler</button>
     </div>
 
     <!-- MENÜ İÇERİĞİ -->
